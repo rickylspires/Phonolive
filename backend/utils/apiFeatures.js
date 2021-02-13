@@ -35,6 +35,18 @@ class APIFeatures {
         return this;
     }
 
+    pagination(resPerPage) {
+
+        const currentPage = Number(this.queryStr.page) || 1;
+        const skipPage = resPerPage * (currentPage -1);
+
+        // limit to how many set in resPerPage
+        // skip to the correct page & skip by the limit * num pages
+        this.query = this.query.limit(resPerPage).skip(skipPage);
+        return this;
+
+    }
+
 }
 
 module.exports = APIFeatures
