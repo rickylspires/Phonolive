@@ -9,10 +9,10 @@ const {
     deleteProduct
 } = require('../controllers/productController');
 
-const { isAuthenticatedUser } = require('../middleware/auth');
+const { isAuthenticatedUser, authorizeRoles } = require('../middleware/auth');
 
 //Public
-router.route('/products').get(getProducts);
+router.route('/products').get(isAuthenticatedUser, authorizeRoles('admin'), getProducts);
 router.route('/product/:id').get(getSingleProduct);
 
 //Admin
