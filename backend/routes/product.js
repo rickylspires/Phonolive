@@ -12,13 +12,13 @@ const {
 const { isAuthenticatedUser, authorizeRoles } = require('../middleware/auth');
 
 //Public
-router.route('/products').get(isAuthenticatedUser, authorizeRoles('admin'), getProducts);
+router.route('/products').get(getProducts);
 router.route('/product/:id').get(getSingleProduct);
 
 //Admin
-router.route('/admin/products/new').post(isAuthenticatedUser, newProduct);
+router.route('/admin/products/new').post(isAuthenticatedUser, authorizeRoles('admin'), newProduct);
 router.route('/admin/product/:id')
-    .put(isAuthenticatedUser, updateProduct)
-    .delete(isAuthenticatedUser, deleteProduct);
+    .put(isAuthenticatedUser, authorizeRoles('admin'),  updateProduct)
+    .delete(isAuthenticatedUser, authorizeRoles('admin'),  deleteProduct);
 
 module.exports = router;
