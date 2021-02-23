@@ -8,10 +8,11 @@ const errorMiddleware = require('./middleware/errors');
 app.use(express.json());
 app.use(cookieParser());
 
-//Import all routes
+// Import all routes
 const products = require('./routes/product');
 const auth = require('./routes/auth');
 const order = require('./routes/order');
+
 
 app.use('/api/v1', products)
 app.use('/api/v1', auth)

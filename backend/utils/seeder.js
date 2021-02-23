@@ -2,7 +2,7 @@ const Product = require('../models/product');
 const dotenv = require('dotenv');
 const connectDatabase = require('../config/database');
 
-const products = require('../data/product');
+const products = require('../data/products');
 
 // WARNING: THIS WILL DELETE ALL PRODUCTS IN DB AND REPLACE WITH THE JSON FILE
 
