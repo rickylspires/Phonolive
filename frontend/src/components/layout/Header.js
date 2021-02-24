@@ -7,7 +7,7 @@ const Header = () => {
       <nav className="navbar row">
       <div className="col-12 col-md-3">
         <div className="navbar-brand">
-          <img src="/images/phono_logo.png" />
+          <img alt="Phono logo" src="/images/phono_logo.png" />
         </div>
       </div>
 

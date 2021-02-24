@@ -11,7 +11,7 @@ function App() {
       <div className="App">
         <Header />
         <div className="container container-fluid">
-          <Home path = "/" component={Home} exact />
+          <Route path="/" component={Home} exact />
         </div>
         <Footer />
       </div>

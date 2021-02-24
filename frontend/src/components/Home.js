@@ -11,12 +11,13 @@ const Home = () => {
                 <div className="col-sm-12 col-md-6 col-lg-3 my-3">
                     <div className="card p-3 rounded">
                         <img
+                        alt="Phono logo"
                         className="card-img-top mx-auto"
                         src="https://m.media-amazon.com/images/I/617NtexaW2L._AC_UY218_.jpg"
                         />
                         <div className="card-body d-flex flex-column">
                             <h5 className="card-title">
-                                <a href="">128GB Solid Storage Memory card - SanDisk Ultra</a>
+                                <a href="#">128GB Solid Storage Memory card - SanDisk Ultra</a>
                             </h5>
                             <div className="ratings mt-auto">
                                 <div className="rating-outer">
