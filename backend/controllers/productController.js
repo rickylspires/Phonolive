@@ -4,12 +4,10 @@ const ErrorHandler = require('../utils/errorHandler')
 const catchAsyncErrors = require('../middleware/catchAsyncErrors')
 const APIFeatures = require('../utils/apiFeatures')
 
-
-// Get all products => /api/v1/products?keyword=apple
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
-    const resPerPage = 4;
-    const productCount = await Product.countDocuments();
+    const resPerPage = 8;
+    const productsCount = await Product.countDocuments();
 
     const apiFeatures = new APIFeatures(Product.find(), req.query )
         .search()
@@ -18,12 +16,13 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
     const products = await apiFeatures.query;
 
-    res.status(200).json({
-        success: true,
-        count: products.length,
-        productCount,
-        products
-    })
+    setTimeout(() => {
+        res.status(200).json({
+            success: true,
+            productsCount,
+            products
+        })
+    }, 1000);
 })
 
 // Get single product => /api/v1/product/:id

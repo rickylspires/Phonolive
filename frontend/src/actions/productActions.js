@@ -9,8 +9,7 @@ import {
 } from '../constants/productConstants'
 
 export const getProducts = () => async (dispatch) => {
-
-try {
+    try {
 
         dispatch({ type: ALL_PRODUCTS_REQUEST })
 
@@ -22,12 +21,17 @@ try {
         })
 
     } catch (error) {
+        console.log(error);
         dispatch({
             type: ALL_PRODUCTS_FAIL,
             payload: error.response.data.message
         })
     }
 }
+
+
+
+
 
 // Clear Errors
 export const clearErrors = () => async (dispatch) => {
