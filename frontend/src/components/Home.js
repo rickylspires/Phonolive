@@ -10,13 +10,15 @@ import { useAlert } from 'react-alert'
 import { getProducts } from '../actions/productActions'
 
 
-const Home = () => {
+const Home = ({ match }) => {
 
     const alert = useAlert();
     const dispatch = useDispatch();
 
     const [currentPage, setCurrentPage] = useState(1)
     const { loading, products, error, productsCount, resPerPage } = useSelector(state => state.products)
+
+    const keyword = match.params.keyword
 
     useEffect(() => {
 
@@ -25,7 +27,7 @@ const Home = () => {
             return alert.error(error)
         }
 
-        dispatch(getProducts(currentPage));
+        dispatch(getProducts(keyword, currentPage));
 
     }, [dispatch, alert, error, currentPage])
 
