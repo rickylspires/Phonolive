@@ -1,7 +1,7 @@
 {
-  "name": "phonolive",
+  "name": "node-react-shop",
   "version": "1.0.0",
-  "description": "Phonolive app",
+  "description": "Node & React Shop",
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
