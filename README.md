@@ -1,4 +1,4 @@
-# PHONOLIVE STORE
+# NODE & REACT SHOP
 
 ## Requirements
 
